@@ -1,38 +1,38 @@
 enum UserRole {
   User,
   Admin,
-  Super
+  Super,
 }
 
 interface User {
-  id: number;
-  givenName: string;
-  familyName: string;
-  dateOfBirth: string;
-  role: UserRole;
+  id: number
+  givenName: string
+  familyName: string
+  dateOfBirth: string
+  role: UserRole
 }
 
 interface Car {
-  id: number;
-  make: string;
-  model: string;
-  user: User;
+  id: number
+  make: string
+  model: string
+  user: User
 }
 
 interface Data {
-  users: User[];
-  cars: Car[];
+  users: User[]
+  cars: Car[]
 }
 
 const DATA: Data = {
   users: [],
-  cars: []
-};
+  cars: [],
+}
 
 export const db = (dataType: string, ...opts) => {
   // You can use the DATA object in here
   // Begin editing after this line
-  console.log(DATA);
+  console.log(DATA)
 
   return {
     getAllUsers: (): User[] => {},
@@ -44,7 +44,7 @@ export const db = (dataType: string, ...opts) => {
     getOneCar: (): Car => {},
     createCar: (): Partial<Car> => {},
     updateCar: (): Partial<Car> => {},
-    deleteCar: (): boolean => {}
-  };
+    deleteCar: (): boolean => {},
+  }
   // End editing after this line
-};
+}

@@ -1,6 +1,7 @@
 import Koa from 'koa'
 import Router from 'koa-router'
 import logger from 'koa-logger'
+import cors from '@koa/cors'
 import bodyParser from 'koa-bodyparser'
 
 export const app = new Koa()
@@ -14,6 +15,7 @@ router.get('/', async (ctx: Koa.Context) => {
 })
 
 app
+  .use(cors())
   .use(logger())
   .use(bodyParser())
   .use(router.routes())
